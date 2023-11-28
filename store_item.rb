@@ -30,3 +30,26 @@ item3 = {
 pp item1
 pp item2
 pp item3
+
+# a) Choose which attributes should have “reader” methods and which attributes should have “writer” methods.
+# b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
+# c) Use the attr_writer method to change a value
+
+class StoreItem
+  attr_reader :name, :color  
+  attr_accessor :price       
+  def initialize(name, color, price)
+    @name = name
+    @color = color
+    @price = price
+  end
+end
+
+item = StoreItem.new("T-shirt", "Blue", 19.99)
+
+puts "Name: #{item.name}"
+puts "Color: #{item.color}"
+puts "Price: #{item.price}"
+
+item.price = 24.99
+puts "Updated Price: #{item.price}"
