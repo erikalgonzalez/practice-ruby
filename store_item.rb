@@ -36,12 +36,12 @@ pp item3
 # c) Use the attr_writer method to change a value
 
 class StoreItem
-  attr_reader :name, :color  
-  attr_accessor :price       
-  def initialize(name, color, price)
-    @name = name
-    @color = color
-    @price = price
+  attr_reader :name, :color
+  attr_writer :price
+  def initialize(input_options)
+    @name = input_options [:name]
+    @color = input_options [:color]
+    @price = input_options [:price]
   end
 end
 
